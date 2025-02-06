@@ -1,0 +1,22 @@
+{
+  "name": "playwright-ts-tests",
+  "version": "1.0.0",
+  "description": "A Playwright automation testing project using TypeScript. Includes test scripts, best practices, and framework setup.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshgat/playwright-ts-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshgat/playwright-ts-tests/issues"
+  },
+  "homepage": "https://github.com/joshgat/playwright-ts-tests#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.1"
+  }
+}
