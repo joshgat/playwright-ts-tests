@@ -1,12 +1,10 @@
-import { test, expect } from "@playwright/test";
-import { LoginPage } from "../../pages/saucedemo/login.page";
-import { InventoryPage } from "../../pages/saucedemo/inventory.page";
+import { test, expect } from "../../fixtures/saucefixtures"; // Ensure the casing matches the file name
 import loginData from "../../data/saucedemo/loginData.json";
 import inventoryData from "../../data/saucedemo/inventoryData.json";
 
 test.describe("Inventory Tests", () => {
-  test.beforeEach(async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  // Use the loginPage fixture to perform login before each test.
+  test.beforeEach(async ({ loginPage }) => {
     await loginPage.goto();
     await loginPage.login(
       loginData.validUser.username,
@@ -14,14 +12,12 @@ test.describe("Inventory Tests", () => {
     );
   });
 
-  test("Should have items in inventory", async ({ page }) => {
-    const inventoryPage = new InventoryPage(page);
+  test("Should have items in inventory", async ({ inventoryPage }) => {
     const inventoryCount = await inventoryPage.getInventoryCount();
     await expect(inventoryCount).toBeGreaterThan(0);
   });
 
-  test("Should add products to cart", async ({ page }) => {
-    const inventoryPage = new InventoryPage(page);
+  test("Should add products to cart", async ({ inventoryPage }) => {
     await inventoryPage.addProductToCart(inventoryData.sauceLabsBackpack.name);
     await inventoryPage.addProductToCart(inventoryData.sauceLabsBikeLight.name);
     await expect(inventoryPage.shoppingCartBadge).toHaveText("2");
