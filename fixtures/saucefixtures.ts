@@ -1,7 +1,6 @@
-import { test as base } from "@playwright/test";
-import { LoginPage } from "../pages/saucedemo/login.page";
-import { InventoryPage } from "../pages/saucedemo/inventory.page";
-import loginData from "../data/saucedemo/loginData.json";
+import { test as base } from '@playwright/test';
+import { LoginPage } from '../pages/saucedemo/login.page';
+import { InventoryPage } from '../pages/saucedemo/inventory.page';
 
 type SauceFixtures = {
   loginPage: LoginPage;
@@ -20,4 +19,4 @@ export const test = base.extend<SauceFixtures>({
 });
 
 // Re-export 'expect' from Playwright so that you can import both from this file.
-export { expect } from "@playwright/test";
+export { expect } from '@playwright/test';

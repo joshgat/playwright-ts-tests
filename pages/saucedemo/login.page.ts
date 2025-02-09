@@ -1,4 +1,4 @@
-import { expect, type Page, type Locator } from "@playwright/test";
+import { type Page, type Locator } from '@playwright/test';
 
 export class LoginPage {
   readonly page: Page;
@@ -9,14 +9,14 @@ export class LoginPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.usernameTextBox = page.locator("#user-name");
-    this.passwordTextBox = page.locator("#password");
-    this.loginButton = page.locator("#login-button");
+    this.usernameTextBox = page.locator('#user-name');
+    this.passwordTextBox = page.locator('#password');
+    this.loginButton = page.locator('#login-button');
     this.errorMessage = page.locator('[data-test="error"]');
   }
 
   async goto() {
-    await this.page.goto("/");
+    await this.page.goto('/');
   }
 
   async login(username: string, password: string) {

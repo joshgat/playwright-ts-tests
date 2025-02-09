@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A Playwright automation testing project using TypeScript. Includes test scripts, best practices, and framework setup.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "pretest": "tsc --noEmit && eslint tests/**",
+    "test": "playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joshgat/playwright-ts-tests.git"
@@ -16,7 +19,13 @@
   },
   "homepage": "https://github.com/joshgat/playwright-ts-tests#readme",
   "devDependencies": {
+    "@eslint/js": "^9.20.0",
     "@playwright/test": "^1.50.1",
-    "@types/node": "^22.13.1"
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.13.1",
+    "eslint": "^9.20.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
   }
 }
